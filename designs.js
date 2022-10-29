@@ -24,5 +24,18 @@ function loadAll() {
         var design = document.createElement("div");
         design.classList.add("design");
         design.id = designs[i].id;
+
+        var designImage = document.createElement("div");
+        designImage.classList.add("designImage");
+        designImage.style.backgroundImage = "url(" + designs[i].image + ");";
+
+        var designTitle = document.createElement("div");
+        designTitle.classList.add("designTitle");
+        designTitle.innerHTML = designs[i].name;
+
+        designImage.appendChild(designTitle);
+
+        var designInfo = document.createElement("div");
+        designInfo.classList.add("designInfo");
     }
 }
