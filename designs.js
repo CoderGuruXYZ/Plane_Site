@@ -37,5 +37,25 @@ function loadAll() {
 
         var designInfo = document.createElement("div");
         designInfo.classList.add("designInfo");
+
+        var classes = ["Difficulty", "Distance", "FlyTime"];
+        var html = ["Easy", "Distance: 4", "Fly Time: 3"];
+
+        for(i = 0; i < classes.length; i++) {
+            var info = document.createElement("div");
+            info.classList.add("info" + classes[i]);
+            info.innerHTML = html[i];
+            i == 0 ? info.id = html[i] : info.id = "designInfo";
+
+            designInfo.appendChild(info);
+        }
+
+        designImage.appendChild(designInfo);
+
+        design.appendChild(designImage);
+
+        document.querySelector(".designs").appendChild(design);
     }
 }
+
+loadAll();
