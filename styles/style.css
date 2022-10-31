@@ -81,7 +81,7 @@ nav {
 
     margin-left: 20px;
 
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .link {
@@ -186,7 +186,7 @@ nav {
     margin-left: -1px;
     margin-right: -5px;
 
-    background-image: url(/images/ClassicPlane2.png);
+    background-image: url(/images/classicPlane.png);
     background-size: 100% 100%;
 
     position: relative;

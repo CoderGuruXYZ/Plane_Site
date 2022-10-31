@@ -10,10 +10,10 @@ function loadInfo() {
 
     $(".ratings").html("");
 
-    var captions = ["Difficulty", "Distance", "Fly Time"];
-    var values = [designOBJ.difficulty, designOBJ.distance, designOBJ.flyTime];
+    var captions = ["Difficulty", "Distance", "Fly Time", "Steps"];
+    var values = [designOBJ.difficulty, designOBJ.distance, designOBJ.flyTime, designOBJ.instructions.text.length];
 
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < captions.length; i++) {
         var rating = document.createElement("div");
         rating.classList.add("rating");
         if (i == 0) {

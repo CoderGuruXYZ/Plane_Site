@@ -10,7 +10,7 @@ function loadAll() {
 
         var designImage = document.createElement("div");
         designImage.classList.add("designImage");
-        designImage.style.backgroundImage = "url(/images/" + designsList[i].image + ");";
+        designImage.style.backgroundImage = "url(" + designsList[i].image + ");";
 
         var designTitle = document.createElement("div");
         designTitle.classList.add("designTitle");
