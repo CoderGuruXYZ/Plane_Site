@@ -30,6 +30,8 @@ body {
     color: var(--color);
 }
 
+/* Scrollbar */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -47,6 +49,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #004899;
 }
+
+/* Navbar */
 
 nav {
     width: 100vw;
@@ -104,6 +108,8 @@ nav {
     color: var(--white3);
 }
 
+/* Main Stuff */
+
 .main {
     width: 80vw;
     
@@ -148,6 +154,8 @@ nav {
     margin: 3px;
 }
 
+/* Designs */
+
 .designs {
     display: flex;
 
@@ -156,9 +164,8 @@ nav {
     flex-direction: row;
 }
 
-/* 4:3 Ratio */
-
 .design {
+    /* 4:3 Ratio */
     width: calc(25vw);
     height: calc(25vw / 4 * 3);
 
@@ -166,7 +173,7 @@ nav {
 
     border: 5px solid var(--blue3);
 
-    background-image: url(background.jpg);
+    background-image: url(/images/background.jpg);
     background-size: cover;
 
     cursor: pointer;
@@ -179,7 +186,7 @@ nav {
     margin-left: -1px;
     margin-right: -5px;
 
-    background-image: url(ClassicPlane2.png);
+    background-image: url(/images/ClassicPlane2.png);
     background-size: 100% 100%;
 
     position: relative;
@@ -236,6 +243,56 @@ nav {
     top: 10px;
     left: 10px;
 }
+
+/* Instructions/Design Page */
+
+.instructions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    flex-direction: row;
+
+    padding-bottom: 10vh;
+    padding-top: 5vh;
+}
+
+.instruction {
+    width: calc(100% / 4 - 2.5vw);
+    height: calc(20vw + 160px);
+
+    margin: 1vw;
+
+    padding: 12.5px;
+
+    border: 5px solid var(--blue3);
+
+    background-color: #e8f4f968;
+}
+
+.instructionTitle {
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+.instructionImage {
+    /* 3:4 Ratio */
+    width: 15vw;
+    height: 20vw;
+
+    background-image: url(/images/background.jpg);
+    background-size: cover;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.instructionText {
+    font-size: 16px;
+}
+
+/* Footer */
 
 body {
     margin-bottom: 8vh;
