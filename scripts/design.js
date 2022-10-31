@@ -4,38 +4,40 @@ const design = urlParams.get('design');
 const designIDX = parseInt(urlParams.get('designIDX'));
 const designOBJ = designsList[designIDX];
 
-$(".title").html(designOBJ.name);
-$(".info").html("Instructions on How to Fold the <b>" + designOBJ.name + "</b>.");
+function loadInfo() {
+    $(".title").html(designOBJ.name);
+    $(".info").html("Instructions on How to Fold the <b>" + designOBJ.name + "</b>.");
 
-$(".ratings").html("");
+    $(".ratings").html("");
 
-var captions = ["Difficulty", "Distance", "Fly Time"];
-var values = [designOBJ.difficulty, designOBJ.distance, designOBJ.flyTime];
+    var captions = ["Difficulty", "Distance", "Fly Time"];
+    var values = [designOBJ.difficulty, designOBJ.distance, designOBJ.flyTime];
 
-for(i = 0; i < 3; i++) {
-    var rating = document.createElement("div");
-    rating.classList.add("rating");
-    if(i == 0) {
-        var difSpan = document.createElement("span");
-        difSpan.id = values[i];
-        difSpan.innerHTML = values[i];
+    for (i = 0; i < 3; i++) {
+        var rating = document.createElement("div");
+        rating.classList.add("rating");
+        if (i == 0) {
+            var difSpan = document.createElement("span");
+            difSpan.id = values[i];
+            difSpan.innerHTML = values[i];
 
-        var capSpan = document.createElement("span");
-        capSpan.innerHTML = captions[i] + ": ";
+            var capSpan = document.createElement("span");
+            capSpan.innerHTML = captions[i] + ": ";
 
-        rating.appendChild(capSpan);
-        rating.appendChild(difSpan);
-    } else {
-        rating.innerHTML = captions[i] + ": " + values[i];
+            rating.appendChild(capSpan);
+            rating.appendChild(difSpan);
+        } else {
+            rating.innerHTML = captions[i] + ": " + values[i];
+        }
+
+        document.querySelector(".ratings").appendChild(rating);
     }
-
-    document.querySelector(".ratings").appendChild(rating);
 }
 
 function loadInstructions() {
     $(".instructions").html("");
-    
-    for(i = 0; i < designOBJ.instructions.text.length; i++) {
+
+    for (i = 0; i < designOBJ.instructions.text.length; i++) {
         var instruction = document.createElement("div");
         instruction.classList.add("instruction");
         instruction.id = "instruction." + i;
@@ -49,7 +51,7 @@ function loadInstructions() {
         var instructionImage = document.createElement("img");
         instructionImage.classList.add("instructionImage");
         instructionImage.src = designOBJ.instructions.images[i];
-        
+
         instruction.appendChild(instructionImage);
 
         var instructionText = document.createElement("div");
@@ -63,3 +65,4 @@ function loadInstructions() {
 }
 
 loadInstructions();
+loadInfo();
