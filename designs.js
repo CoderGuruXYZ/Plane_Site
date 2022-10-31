@@ -1,37 +1,20 @@
-var designs = [
-    {
-        name: "Classic Plane",
-        id: "classicPlane",
-        image: "ClassicPlane2.png",
-        difficulty: "Easy",
-        distance: "4",
-        flyTime: "3",
-    },
-    {
-        name: "Classic Plane copy",
-        id: "classicPlaneC",
-        image: "ClassicPlane2.png",
-        difficulty: "Extreme",
-        distance: "4",
-        flyTime: "3",
-    }
-];
-
 function loadAll() {
     $(".designs").html("");
 
-    for(i = 0; i < designs.length; i++) {
-        var design = document.createElement("div");
+    for(i = 0; i < designsList.length; i++) {
+        var design = document.createElement("a");
         design.classList.add("design");
-        design.id = designs[i].id;
+        design.target = "_blank";
+        design.href = window.location.origin + "/design.html" + "?design=" + designsList[i].id + "&designIDX=" + i;
+        design.id = designsList[i].id;
 
         var designImage = document.createElement("div");
         designImage.classList.add("designImage");
-        designImage.style.backgroundImage = "url(" + designs[i].image + ");";
+        designImage.style.backgroundImage = "url(" + designsList[i].image + ");";
 
         var designTitle = document.createElement("div");
         designTitle.classList.add("designTitle");
-        designTitle.innerHTML = designs[i].name;
+        designTitle.innerHTML = designsList[i].name;
 
         designImage.appendChild(designTitle);
 
@@ -39,13 +22,14 @@ function loadAll() {
         designInfo.classList.add("designInfo");
 
         var classes = ["Difficulty", "Distance", "FlyTime"];
-        var html = ["Easy", "Distance: 4", "Fly Time: 3"];
+        var html = [designsList[i].difficulty, designsList[i].distance, designsList[i].flyTime];
 
-        for(i = 0; i < classes.length; i++) {
+        for(ii = 0; ii < classes.length; ii++) {
             var info = document.createElement("div");
-            info.classList.add("info" + classes[i]);
-            info.innerHTML = html[i];
-            i == 0 ? info.id = html[i] : info.id = "designInfo";
+            info.classList.add("info" + classes[ii]);
+            ii == 0 ? info.id = html[ii] : info.id = "designInfo";
+            ii > 0 ? info.innerHTML = classes[ii] + ": " + html[ii] : info.innerHTML = html[ii];
+            if (ii == 2) info.innerHTML = "Fly Time: " + html[ii];
 
             designInfo.appendChild(info);
         }

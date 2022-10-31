@@ -119,10 +119,33 @@ nav {
     font-size: 64px;
 }
 
+.top {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
 .info {
     margin-top: 20px;
 
     font-size: 22px;
+}
+
+.ratings {
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: end;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.rating {
+    margin: 3px;
 }
 
 .designs {
@@ -160,6 +183,12 @@ nav {
     background-size: 100% 100%;
 
     position: relative;
+
+    text-decoration: none;
+
+    color: var(--color);
+
+    cursor: pointer;
 }
 
 .designInfo {
@@ -183,6 +212,18 @@ nav {
 
 #Easy {
     color: green;
+}
+
+#Medium {
+    color: orange;
+}
+
+#Hard {
+    color: red;
+}
+
+#Extreme {
+    color: darkred;
 }
 
 .designTitle {
